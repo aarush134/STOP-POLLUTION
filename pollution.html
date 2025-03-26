@@ -10,86 +10,32 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f0f8ff;
             color: #333;
             text-align: center;
         }
 
         header {
-            background: #4CAF50;
+            background: #FF6347;
             color: white;
             padding: 1rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            border-bottom: 5px solid #FFD700;
         }
 
         main {
             padding: 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
         }
 
         .section {
-            background: white;
+            background: #FFDEAD;
             padding: 20px;
             margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta {
-            background: #ff9800;
-            color: white;
-            padding: 15px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .cta:hover {
-            background: #e68900;
-        }
-
-        /* Pop-up styling */
-        .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            width: 300px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            display: none;
-            text-align: center;
-            z-index: 1000;
-        }
-
-        .popup button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .popup button:hover {
-            background: #388E3C;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            z-index: 999;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-left: 10px solid #32CD32;
         }
 
         /* Responsiveness */
@@ -101,11 +47,6 @@
             .section {
                 padding: 15px;
             }
-
-            .cta {
-                padding: 12px;
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
@@ -115,58 +56,40 @@
 
     <main>
         <section class="section" aria-labelledby="pollution-definition">
-            <h2 id="pollution-definition">What is Pollution?</h2>
+            <h2 id="pollution-definition" style="color: #FF4500;">What is Pollution?</h2>
             <p>Pollution is the introduction of harmful substances into the environment, affecting air, water, and land.
             </p>
         </section>
 
         <section class="section" aria-labelledby="pollution-causes">
-            <h2 id="pollution-causes">Causes of Pollution</h2>
+            <h2 id="pollution-causes" style="color: #FF1493;">Causes of Pollution</h2>
             <p>Pollution is caused by industrial waste, vehicle emissions, deforestation, and improper waste disposal.
             </p>
         </section>
 
         <section class="section" aria-labelledby="pollution-effects">
-            <h2 id="pollution-effects">Effects of Pollution</h2>
+            <h2 id="pollution-effects" style="color: #1E90FF;">Effects of Pollution</h2>
             <p>It leads to climate change, health issues, loss of biodiversity, and damage to ecosystems.</p>
         </section>
 
-        <section class="section" aria-labelledby="pollution-help">
-            <h2 id="pollution-help">How Can We Help?</h2>
-            <p>Reduce waste, use eco-friendly products, plant trees, and support renewable energy.</p>
+        <section class="section" aria-labelledby="pollution-consequences">
+            <h2 id="pollution-consequences" style="color: #8A2BE2;">Consequences of Pollution</h2>
+            <p>Pollution results in:
+            <ul>
+                <li>Severe health problems, including respiratory diseases, cancer, and heart disease.</li>
+                <li>Damage to ecosystems, leading to loss of species and biodiversity.</li>
+                <li>Global warming, affecting weather patterns, rising sea levels, and more extreme weather events.</li>
+                <li>Contamination of natural resources like water and soil, making them unsafe for consumption and
+                    agriculture.</li>
+            </ul>
+            </p>
         </section>
 
-        <button class="cta" onclick="showPopup()" aria-label="Take action to reduce pollution">Take Action Now</button>
+        <section class="section" aria-labelledby="pollution-help">
+            <h2 id="pollution-help" style="color: #32CD32;">How Can We Help?</h2>
+            <p>Reduce waste, use eco-friendly products, plant trees, and support renewable energy.</p>
+        </section>
     </main>
-
-    <!-- Pop-up message -->
-    <div class="overlay" id="overlay" role="presentation"></div>
-    <div class="popup" id="popup" role="dialog" aria-labelledby="popup-title" aria-hidden="true">
-        <h3 id="popup-title">Thank you for taking action!</h3>
-        <p>Start by reducing waste, using eco-friendly products, and spreading awareness!</p>
-        <button onclick="closePopup()" aria-label="Close the pop-up">Close</button>
-    </div>
-
-    <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('popup').setAttribute('aria-hidden', 'false');
-        }
-
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('popup').setAttribute('aria-hidden', 'true');
-        }
-
-        // Close the pop-up when the escape key is pressed
-        document.addEventListener('keydown', function (event) {
-            if (event.key === "Escape") {
-                closePopup();
-            }
-        });
-    </script>
 </body>
 
 </html>
